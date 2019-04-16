@@ -59,21 +59,18 @@ func romanToInt(s string) int {
 	sl := []rune(s)
 	sum := 0
 	// fmt.Println(sum)
+	last := 0
 	for i := len(sl) - 1; i >= 0; i-- {
-		if i == len(sl) - 1 {
+		if romanMap[string(sl[i])] >= last {
 			sum += romanMap[string(sl[i])]
-			continue
-		}
-
-		if romanMap[string(sl[i+1])] > romanMap[string(sl[i])] {
-			sum -= romanMap[string(sl[i])]
 		} else {
-			sum += romanMap[string(sl[i])]
+			sum -= romanMap[string(sl[i])]
 		}
+		last = romanMap[string(sl[i])]
 	}
 	return sum
 }
 
 func main() {
-	fmt.Println(romanToInt("IX"))
+	fmt.Println(romanToInt("IV"))
 }
