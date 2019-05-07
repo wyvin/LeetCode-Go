@@ -21,10 +21,6 @@ import "fmt"
 所有输入只包含小写字母 a-z 。
  */
 func longestCommonPrefix(strs []string) string {
-	/*
-	执行用时 : 4 ms, 在Longest Common Prefix的Go提交中击败了91.32% 的用户
-	内存消耗 : 2.5 MB, 在Longest Common Prefix的Go提交中击败了35.75% 的用户
-	 */
 	prefix := ""
 	length := len(strs)
 	if length == 1 {
