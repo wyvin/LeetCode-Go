@@ -17,9 +17,6 @@ package main
 func twoSum1(nums []int, target int) []int {
 	var diff int
 	for i, num := range nums {
-		if num > target {
-			continue
-		}
 		diff = target - num
 		for j:=i+1;j<len(nums);j++ {
 			if diff == nums[j] {
