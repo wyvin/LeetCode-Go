@@ -1,4 +1,4 @@
-package __Reverse_Integer
+package _0007_Reverse_Integer
 
 import "math"
 

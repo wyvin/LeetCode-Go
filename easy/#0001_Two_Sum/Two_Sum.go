@@ -1,4 +1,4 @@
-package __Two_Sum
+package _0001_Two_Sum
 
 // 2021-01-01
 func twoSum1(nums []int, target int) []int {

@@ -1,4 +1,4 @@
-package __Reverse_Integer
+package _0013_Roman_to_Integer
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 )
 
 type input struct {
-	X int
+	X string
 	Answer
 }
 type Answer int
@@ -15,30 +15,34 @@ var output int
 
 func Run(input *input) {
 	fmt.Printf("input: %v\n", input.X)
-	output = reverse(input.X)
+	output = romanToInt(input.X)
 	fmt.Printf("output: %v\n", output)
 	fmt.Printf("answer: %v\n\n", input.Answer)
 }
 
-
 func TestReverse(t *testing.T) {
 	Run(&input{
-		X: 123,
-		Answer: 321,
+		X:      "III",
+		Answer: 3,
 	})
 
 	Run(&input{
-		X: -123,
-		Answer: -321,
+		X:      "IV",
+		Answer: 4,
 	})
 
 	Run(&input{
-		X: -120,
-		Answer: -21,
+		X:      "IX",
+		Answer: 9,
 	})
 
 	Run(&input{
-		X: 1563847412,
-		Answer: 0,
+		X:      "LVIII",
+		Answer: 58,
+	})
+
+	Run(&input{
+		X:      "MCMXCIV",
+		Answer: 1994,
 	})
 }

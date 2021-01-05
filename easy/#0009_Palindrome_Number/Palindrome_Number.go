@@ -1,4 +1,4 @@
-package __Palindrome_Number
+package _0009_Palindrome_Number
 
 // 2020-01-03 利用整数反转，也可以用字符串实现
 func isPalindrome(x int) bool {
