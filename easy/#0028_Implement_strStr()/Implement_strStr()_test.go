@@ -52,4 +52,9 @@ func TestReverse(t *testing.T) {
 		Needle: "a",
 		Answer: 0,
 	})
+	Run(&input{
+		X:      "a",
+		Needle: "aa",
+		Answer: -1,
+	})
 }
