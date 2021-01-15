@@ -12,7 +12,7 @@ var romanMap = map[string]int{
 
 func romanToInt(s string) int {
 	var (
-		sum int
+		sum  int
 		last int
 	)
 	for i := len(s) - 1; i >= 0; i-- {

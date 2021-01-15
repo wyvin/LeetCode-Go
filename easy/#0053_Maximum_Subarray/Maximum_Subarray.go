@@ -7,11 +7,11 @@ func maxSubArray(nums []int) int {
 	sum := nums[0]
 	// 最大和
 	max := sum
-	for i:=1;i<len(nums);i++{
+	for i := 1; i < len(nums); i++ {
 		if sum < 0 {
 			sum = nums[i]
 		} else {
-			sum = sum+nums[i]
+			sum = sum + nums[i]
 		}
 		if max < sum {
 			max = sum
@@ -24,7 +24,7 @@ func maxSubArray(nums []int) int {
 // 若前一个元素大于0，则将其加到当前元素上
 func maxSubArray2(nums []int) int {
 	max := nums[0]
-	for i:=1;i<len(nums);i++{
+	for i := 1; i < len(nums); i++ {
 		if nums[i-1] > 0 {
 			nums[i] += nums[i-1]
 		}

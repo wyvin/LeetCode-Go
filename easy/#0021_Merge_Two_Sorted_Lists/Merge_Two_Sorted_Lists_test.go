@@ -48,37 +48,37 @@ func Run(input *input) {
 
 func TestReverse(t *testing.T) {
 	Run(&input{
-		L1:      &ListNode{
-			Val:  1,
+		L1: &ListNode{
+			Val: 1,
 			Next: &ListNode{
-				Val:  2,
+				Val: 2,
 				Next: &ListNode{
 					Val:  4,
 					Next: nil,
 				},
 			},
 		},
-		L2:      &ListNode{
-			Val:  1,
+		L2: &ListNode{
+			Val: 1,
 			Next: &ListNode{
-				Val:  3,
+				Val: 3,
 				Next: &ListNode{
 					Val:  4,
 					Next: nil,
 				},
 			},
 		},
-		Answer: []int{1,1,2,3,4,4},
+		Answer: []int{1, 1, 2, 3, 4, 4},
 	})
 
 	Run(&input{
-		L1:  nil,
+		L1:     nil,
 		L2:     nil,
 		Answer: []int{},
 	})
 	Run(&input{
-		L1:     nil,
-		L2:      &ListNode{
+		L1: nil,
+		L2: &ListNode{
 			Val:  0,
 			Next: nil,
 		},

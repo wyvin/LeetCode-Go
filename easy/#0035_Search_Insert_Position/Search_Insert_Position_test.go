@@ -1,13 +1,12 @@
 package _0035_Search_Insert_Position
 
-
 import (
 	"fmt"
 	"testing"
 )
 
 type input struct {
-	X []int
+	X      []int
 	Target int
 
 	Answer int
@@ -16,7 +15,7 @@ type input struct {
 var output int
 
 func Run(input *input) {
-	fmt.Printf("input: %v, target: %d \n", input.X,input.Target)
+	fmt.Printf("input: %v, target: %d \n", input.X, input.Target)
 	output = searchInsert2(input.X, input.Target)
 	fmt.Printf("output: %d\n", output)
 	fmt.Printf("answer: %d\n\n", input.Answer)

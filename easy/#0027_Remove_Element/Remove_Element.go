@@ -6,12 +6,12 @@ func removeElement(nums []int, val int) int {
 		return 0
 	}
 	newLen := 0
-	for i:=len(nums)-1;i>=newLen;i--{
+	for i := len(nums) - 1; i >= newLen; i-- {
 		for nums[newLen] != val && newLen < i {
 			newLen++
 		}
 		if nums[i] != val {
-			nums[i],nums[newLen] = nums[newLen],nums[i]
+			nums[i], nums[newLen] = nums[newLen], nums[i]
 			newLen++
 		}
 	}

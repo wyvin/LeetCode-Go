@@ -22,11 +22,11 @@ func Run(input *input) {
 
 func TestReverse(t *testing.T) {
 	Run(&input{
-		X:      []int{1,1,2},
-		Answer: []int{1,2},
+		X:      []int{1, 1, 2},
+		Answer: []int{1, 2},
 	})
 	Run(&input{
-		X:      []int{0,0,1,1,1,2,2,3,3,4},
-		Answer: []int{0,1,2,3,4},
+		X:      []int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4},
+		Answer: []int{0, 1, 2, 3, 4},
 	})
 }

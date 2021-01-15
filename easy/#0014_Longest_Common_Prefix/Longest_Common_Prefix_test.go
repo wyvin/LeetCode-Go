@@ -22,17 +22,17 @@ func Run(input *input) {
 
 func TestReverse(t *testing.T) {
 	Run(&input{
-		X:      []string{"flower","flow","flight"},
+		X:      []string{"flower", "flow", "flight"},
 		Answer: "fl",
 	})
 
 	Run(&input{
-		X:      []string{"dog","racecar","car"},
+		X:      []string{"dog", "racecar", "car"},
 		Answer: "",
 	})
 
 	Run(&input{
-		X:      []string{"ab","a"},
+		X:      []string{"ab", "a"},
 		Answer: "a",
 	})
 }

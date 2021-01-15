@@ -9,10 +9,10 @@ import (
 // 2021-01-12 用字符串处理效率较低10ms+
 func countAndSay(n int) string {
 	var (
-		res = "1"
+		res     = "1"
 		builder strings.Builder
-		tmp string
-		s string
+		tmp     string
+		s       string
 	)
 	for n > 1 {
 		n--
@@ -26,12 +26,12 @@ func countAndSay(n int) string {
 				tmp += string(item)
 			} else {
 				s = string(item)
-				builder.WriteString(fmt.Sprintf("%d%s",len(tmp), string(tmp[0])))
+				builder.WriteString(fmt.Sprintf("%d%s", len(tmp), string(tmp[0])))
 				tmp = s
 			}
 		}
 		// 加上最后一串字符
-		builder.WriteString(fmt.Sprintf("%d%s",len(tmp), string(tmp[0])))
+		builder.WriteString(fmt.Sprintf("%d%s", len(tmp), string(tmp[0])))
 		res = builder.String()
 	}
 	return res
@@ -40,10 +40,10 @@ func countAndSay(n int) string {
 // 用整数处理 0ms
 func countAndSay2(n int) string {
 	var (
-		res = []int{1}
-		tmp []int
-		s int
-		l int
+		res     = []int{1}
+		tmp     []int
+		s       int
+		l       int
 		builder strings.Builder
 	)
 	for n > 1 {

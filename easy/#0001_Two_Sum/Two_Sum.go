@@ -5,7 +5,7 @@ func twoSum1(nums []int, target int) []int {
 	var diff int
 	for i, num := range nums {
 		diff = target - num
-		for j:=i+1;j<len(nums);j++ {
+		for j := i + 1; j < len(nums); j++ {
 			if diff == nums[j] {
 				return []int{i, j}
 			}
@@ -16,13 +16,13 @@ func twoSum1(nums []int, target int) []int {
 
 // best version
 func twoSum(nums []int, target int) []int {
-	var m = make(map[int]int,len(nums))
-	for k,v := range nums{
+	var m = make(map[int]int, len(nums))
+	for k, v := range nums {
 		t := target - v
-		_,ok := m[t]
+		_, ok := m[t]
 		if ok {
-			return []int{k,m[t]}
-		}else {
+			return []int{k, m[t]}
+		} else {
 			m[v] = k
 		}
 	}

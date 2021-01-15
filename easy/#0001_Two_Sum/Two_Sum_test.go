@@ -6,7 +6,7 @@ import (
 )
 
 type input struct {
-	Nums []int
+	Nums   []int
 	Target int
 	Answer
 }
@@ -25,6 +25,6 @@ func TestTwoSum(t *testing.T) {
 	Run(&input{
 		Nums:   []int{2, 7, 11, 15},
 		Target: 9,
-		Answer:[]int{0,1},
+		Answer: []int{0, 1},
 	})
 }

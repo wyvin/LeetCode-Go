@@ -4,7 +4,7 @@ func isValid(s string) bool {
 	if s == "" {
 		return true
 	}
-	if len(s) % 10 % 2 == 1 {
+	if len(s)%10%2 == 1 {
 		return false
 	}
 
@@ -13,19 +13,19 @@ func isValid(s string) bool {
 	for _, item := range []byte(s) {
 		if p, ok := parenthesesMap[string(item)]; ok {
 			i++
-			if i > len(stack) - 1 {
+			if i > len(stack)-1 {
 				return false
 			}
 			stack[i] = p
 		} else {
-			if i<0 || stack[i] != string(item) {
+			if i < 0 || stack[i] != string(item) {
 				return false
 			} else {
 				i--
 			}
 		}
 	}
-	return i==-1
+	return i == -1
 }
 
 var parenthesesMap = map[string]string{

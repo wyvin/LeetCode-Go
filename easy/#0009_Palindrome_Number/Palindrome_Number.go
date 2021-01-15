@@ -10,7 +10,7 @@ func isPalindrome(x int) bool {
 	}
 
 	var (
-		y = x
+		y   = x
 		pop int
 		res int
 	)

@@ -22,7 +22,7 @@ func Run(input *input) {
 
 func TestReverse(t *testing.T) {
 	Run(&input{
-		X:      []int{-2,1,-3,4,-1,2,1,-5,4},
+		X:      []int{-2, 1, -3, 4, -1, 2, 1, -5, 4},
 		Answer: 6,
 	})
 	Run(&input{

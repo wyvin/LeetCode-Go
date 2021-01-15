@@ -4,10 +4,10 @@ package _0026_Remove_Duplicates_from_Sorted_Array
 func removeDuplicates(nums []int) int {
 	newLen := 0
 	for i, _ := range nums {
-		if nums[i]>nums[newLen] {
+		if nums[i] > nums[newLen] {
 			newLen++
 			nums[newLen] = nums[i]
 		}
 	}
-	return newLen+1
+	return newLen + 1
 }

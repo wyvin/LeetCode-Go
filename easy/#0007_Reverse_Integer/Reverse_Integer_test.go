@@ -20,25 +20,24 @@ func Run(input *input) {
 	fmt.Printf("answer: %v\n\n", input.Answer)
 }
 
-
 func TestReverse(t *testing.T) {
 	Run(&input{
-		X: 123,
+		X:      123,
 		Answer: 321,
 	})
 
 	Run(&input{
-		X: -123,
+		X:      -123,
 		Answer: -321,
 	})
 
 	Run(&input{
-		X: -120,
+		X:      -120,
 		Answer: -21,
 	})
 
 	Run(&input{
-		X: 1563847412,
+		X:      1563847412,
 		Answer: 0,
 	})
 }

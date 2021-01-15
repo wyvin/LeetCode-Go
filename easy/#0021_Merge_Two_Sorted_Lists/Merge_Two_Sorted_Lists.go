@@ -8,7 +8,7 @@ package _0021_Merge_Two_Sorted_Lists
  * }
  */
 type ListNode struct {
-	Val int
+	Val  int
 	Next *ListNode
 }
 

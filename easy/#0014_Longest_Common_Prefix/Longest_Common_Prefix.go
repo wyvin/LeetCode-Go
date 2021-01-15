@@ -20,8 +20,8 @@ func longestCommonPrefix(strs []string) string {
 		str = []byte(strs[i])
 		length = int(math.Min(float64(len(str)), float64(len(prefix))))
 		prefix = prefix[:length]
-		for j:=0; j<length;j++ {
-			if str[j]!= prefix[j] {
+		for j := 0; j < length; j++ {
+			if str[j] != prefix[j] {
 				prefix = prefix[:j]
 				break
 			}

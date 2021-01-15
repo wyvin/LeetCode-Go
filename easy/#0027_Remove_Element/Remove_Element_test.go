@@ -6,7 +6,7 @@ import (
 )
 
 type input struct {
-	X []int
+	X   []int
 	Val int
 
 	Answer []int
@@ -15,7 +15,7 @@ type input struct {
 var output int
 
 func Run(input *input) {
-	fmt.Printf("input: %v, val:%d \n", input.X,input.Val)
+	fmt.Printf("input: %v, val:%d \n", input.X, input.Val)
 	output = removeElement(input.X, input.Val)
 	fmt.Printf("output: %v\n", input.X[:output])
 	fmt.Printf("answer: %v\n\n", input.Answer)
@@ -23,23 +23,23 @@ func Run(input *input) {
 
 func TestReverse(t *testing.T) {
 	Run(&input{
-		X:      []int{3,2,2,3},
-		Val: 3,
-		Answer: []int{2,2},
+		X:      []int{3, 2, 2, 3},
+		Val:    3,
+		Answer: []int{2, 2},
 	})
 	Run(&input{
-		X:      []int{0,1,2,2,3,0,4,2},
-		Val: 2,
-		Answer: []int{0,1,3,0,4},
+		X:      []int{0, 1, 2, 2, 3, 0, 4, 2},
+		Val:    2,
+		Answer: []int{0, 1, 3, 0, 4},
 	})
 	Run(&input{
 		X:      []int{1},
-		Val: 1,
+		Val:    1,
 		Answer: []int{},
 	})
 	Run(&input{
 		X:      []int{},
-		Val: 0,
+		Val:    0,
 		Answer: []int{},
 	})
 }
