@@ -44,29 +44,28 @@ func sortedArrayToBST1(nums []int) *TreeNode {
 		}
 	default:
 		left, right := 0, len(nums)-1
-		queue := [][]int{{left, right}}
+		queue := []int{left, right}
 		root := new(TreeNode)
 		nodeQueue := []*TreeNode{root}
 		for len(queue) > 0 {
 			l := len(queue)
-			for i := 0; i < l; i++ {
-				r := queue[i]
-				left, right = r[0], r[1]
+			for i := 0; i < l/2; i++ {
+				left, right = queue[2*i], queue[2*i+1]
 				mid := (left + right) / 2
 				nodeQueue[i].Val = nums[mid]
 				if left < mid {
-					queue = append(queue, []int{left, mid - 1})
-					nodeQueue[i].Left = &TreeNode{}
+					queue = append(queue, left, mid-1)
+					nodeQueue[i].Left = new(TreeNode)
 					nodeQueue = append(nodeQueue, nodeQueue[i].Left)
 				}
 				if right > mid {
-					queue = append(queue, []int{mid + 1, right})
-					nodeQueue[i].Right = &TreeNode{}
+					queue = append(queue, mid+1, right)
+					nodeQueue[i].Right = new(TreeNode)
 					nodeQueue = append(nodeQueue, nodeQueue[i].Right)
 				}
 			}
 			queue = queue[l:]
-			nodeQueue = nodeQueue[l:]
+			nodeQueue = nodeQueue[l/2:]
 		}
 		return root
 	}
