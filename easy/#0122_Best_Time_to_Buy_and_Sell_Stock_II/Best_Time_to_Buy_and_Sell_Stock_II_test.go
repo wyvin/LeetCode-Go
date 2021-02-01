@@ -1,4 +1,4 @@
-package _0121_Best_Time_to_Buy_and_Sell_Stock
+package _0122_Best_Time_to_Buy_and_Sell_Stock_II
 
 import (
 	"fmt"
@@ -26,6 +26,6 @@ func Run(input *input) {
 func Test(t *testing.T) {
 	Run(&input{
 		X:      []int{7, 1, 5, 3, 6, 4},
-		Answer: 5,
+		Answer: 7,
 	})
 }
