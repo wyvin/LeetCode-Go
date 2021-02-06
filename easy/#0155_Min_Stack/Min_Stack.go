@@ -2,6 +2,7 @@ package _0155_Min_Stack
 
 import "math"
 
+// 一个栈记录值，一个栈记录最小值的下标
 type MinStack struct {
 	items        []int
 	minIndexList []int
