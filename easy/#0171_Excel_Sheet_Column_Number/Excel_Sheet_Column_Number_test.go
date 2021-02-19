@@ -2,7 +2,6 @@ package _0171_Excel_Sheet_Column_Number
 
 import (
 	"fmt"
-	"math"
 	"testing"
 )
 
