@@ -9,6 +9,7 @@ func reverse(x int) int {
 	for x != 0 {
 		b = x % 10
 		x /= 10
+		// 判断反转后的数是否会大于MaxInt32
 		if res > math.MaxInt32/10 || (res == math.MaxInt32/10 && b > 7) {
 			return 0
 		}
