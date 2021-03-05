@@ -10,6 +10,10 @@ var romanMap = map[string]int{
 	"M": 1000,
 }
 
+// 右边加法，左边减法
+// 从右边开始循环，对比后一位，比后一位小则加，大则减
+// 例如："IV" = 5 - 1
+//      "VI" = 1 + 5
 func romanToInt(s string) int {
 	var (
 		sum  int
