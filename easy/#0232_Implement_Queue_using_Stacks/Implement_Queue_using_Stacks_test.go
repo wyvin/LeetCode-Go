@@ -12,7 +12,7 @@ type input struct {
 	Answer []interface{}
 }
 
-var myStack MyQueue
+var myQueue MyQueue
 
 func Run(input *input) {
 	fmt.Printf("input: \n")
@@ -21,18 +21,18 @@ func Run(input *input) {
 
 	selector := func(a string, b []int) interface{} {
 		switch a {
-		case "MyStack":
-			myStack = Constructor()
+		case "MyQueue":
+			myQueue = Constructor()
 		case "push":
 			for _, v := range b {
-				myStack.Push(v)
+				myQueue.Push(v)
 			}
 		case "peek":
-			return myStack.Peek()
+			return myQueue.Peek()
 		case "pop":
-			return myStack.Pop()
+			return myQueue.Pop()
 		case "empty":
-			return myStack.Empty()
+			return myQueue.Empty()
 		}
 		return nil
 	}
@@ -55,42 +55,9 @@ func Test(t *testing.T) {
 		Y:      [][]int{{}, {1}, {2}, {}, {}, {}},
 		Answer: []interface{}{nil, nil, nil, 1, 1, false},
 	})
-}
-
-type MyQueue struct {
-	InStack  []int
-	OutStack []int
-}
-
-/** Initialize your data structure here. */
-func Constructor() MyQueue {
-	return MyQueue{}
-}
-
-/** Push element x to the back of queue. */
-func (this *MyQueue) Push(x int) {
-	this.InStack = append(this.InStack, x)
-	for ol := len(this.OutStack) - 1; ol >= 0; ol-- {
-		this.InStack = append(this.InStack, this.OutStack[ol])
-	}
-	this.OutStack = this.InStack
-	this.InStack = []int{}
-}
-
-/** Removes the element from in front of queue and returns that element. */
-func (this *MyQueue) Pop() int {
-	ol := len(this.OutStack)
-	tmp := this.OutStack[ol-1]
-	this.OutStack = this.OutStack[:ol-1]
-	return tmp
-}
-
-/** Get the front element. */
-func (this *MyQueue) Peek() int {
-	return this.OutStack[len(this.OutStack)-1]
-}
-
-/** Returns whether the queue is empty. */
-func (this *MyQueue) Empty() bool {
-	return len(this.OutStack) == 0
+	Run(&input{
+		X:      []string{"MyQueue", "push", "push", "push", "push", "pop", "push", "pop", "pop", "pop", "pop"},
+		Y:      [][]int{{}, {1}, {2}, {3}, {4}, {}, {5}, {}, {}, {}, {}},
+		Answer: []interface{}{nil, nil, nil, nil, nil, 1, nil, 2, 3, 4, 5},
+	})
 }
