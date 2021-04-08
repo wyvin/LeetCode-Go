@@ -6,6 +6,9 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// 找出p，q到root节点的路径，然后判断
+// 优化：由于题目是二叉搜索树，搜索路径时可以根据value大小判断路径方向
+// 优化：根据二叉搜索树的性质，可以同时遍历p和q，且不用存储路径
 func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 	listp := helper(root, p)
 	listq := helper(root, q)
@@ -43,4 +46,19 @@ func helper(root, p *TreeNode) (res []*TreeNode) {
 		return
 	}
 	return
+}
+
+// 优化二
+func lowestCommonAncestor2(root, p, q *TreeNode) *TreeNode {
+	ans := root
+	for {
+		if p.Val > ans.Val && q.Val > ans.Val {
+			ans = ans.Right
+		} else if p.Val < ans.Val && q.Val < ans.Val {
+			ans = ans.Left
+		} else {
+			break
+		}
+	}
+	return ans
 }
